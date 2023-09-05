@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Cart</h1>
+    <form action="/confirm">
+        <ul>
+            {% for seat in selected_seats %}
+                <li>{{ seat }}</li>
+            {% endfor %}
+        </ul>
+        <input type="submit" value="Proceed to Confirmation">
+    </form>
+</body>
+</html>

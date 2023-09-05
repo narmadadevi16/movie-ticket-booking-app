@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .movie-card {
+            margin-bottom: 20px;
+        }
+        .movie-image {
+            max-width: 150px;
+            height: auto;
+        }
+        .movie-details {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .movie-info {
+            flex-basis: 70%;
+        }
+        .movie-book-button {
+            flex-basis: 25%;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5 mb-4">Movie Ticket Booking</h1>
+        {% for movie in movie_data %}
+            <div class="movie-card card">
+                <div class="card-body movie-details">
+                    <div class="movie-info">
+                        <h5 class="card-title">{{ movie['movie name'] }}</h5>
+                        <p class="card-text"><strong>Theatre Name:</strong> {{ movie['theatre name'] }}</p>
+                        <p class="card-text"><strong>Theatre Location:</strong> {{ movie['theatre location'] }}</p>
+                        <p class="card-text"><strong>Release Date:</strong> {{ movie['release date'] }}</p>
+                    </div>
+                    <div class="movie-book-button">
+                        <a href="{{ url_for('booktickets') }}" class="btn btn-primary">Book Tickets for {{ movie['movie name'] }}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

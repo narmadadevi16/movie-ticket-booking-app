@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Select Seats</h1>
+    <form method="POST" action="/select_seat">
+        <div class="seat-map">
+            {% for row in seats %}
+                <div class="row">
+                    <h2>Row {{ loop.index }}:</h2>
+                    <div class="seat-row">
+                        {% for seat in row %}
+                            <label class="seat-label">
+                                <input type="checkbox" class="seat-checkbox" name="seat" value="{{ seat }}" onclick="toggleSeat(this)">
+                                <span class="seat-number">{{ seat }}</span>
+                            </label>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <input type="submit" value="Add to Cart">
+    </form>
+    <script>
+        function toggleSeat(seatCheckbox) {
+            const seatLabel = seatCheckbox.parentNode;
+            seatLabel.classList.toggle("selected");
+        }
+    </script>
+</body>
+</html>

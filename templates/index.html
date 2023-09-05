@@ -1,0 +1,118 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Ticket Booking</title>
+</head>
+<body>
+    <h1>Welcome to Movie Ticket Booking</h1>
+    <a href="{{ url_for('register') }}">Register</a>
+    <a href="{{ url_for('login') }}">Login</a>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .movie-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .movie-item {
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .movie-title {
+            font-weight: bold;
+        }
+
+        .movie-actions {
+            text-align: right;
+        }
+
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            text-decoration: none;
+            border-radius: 3px;
+        }
+
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Movie Ticket Booking</h1>
+    </header>
+    <div class="container">
+         <h2>Book Tickets Online</h2>
+       <!-- <ul class="movie-list">
+            <li class="movie-item">
+                <span class="movie-title">Movie 1</span>
+                <span class="movie-actions">
+                    <a href="#" class="btn">Book Tickets</a>
+                </span>
+            </li>
+            <li class="movie-item">
+                <span class="movie-title">Movie 2</span>
+                <span class="movie-actions">
+                    <a href="#" class="btn">Book Tickets</a>
+                </span>
+            </li>
+            Add more movie items here -->
+            <ul>
+                <a href="{{ url_for('login') }}"  class="btn">Login</a>
+               
+            </ul>
+            <ul>
+                <!-- <a href="#" class="btn">Book Tickets</a> -->
+                <a href="{{ url_for('register') }}"  class="btn">Register</a>
+                
+        </ul>
+        
+       
+    </div>
+</body>
+</html>
+
+
+
+

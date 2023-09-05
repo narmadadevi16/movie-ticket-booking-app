@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirmation</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Confirmation</h1>
+    <p>Your selected seats:</p>
+    <ul>
+        {% for seat in selected_seats %}
+            <li>{{ seat }}</li>
+        {% endfor %}
+    </ul>
+    <p>Thank you {{msg}} for booking!</p>
+    <p>Email has been sent to {{msg2}}. Stay tuned and hope you enjoy the movie!</p>
+</body>
+</html>
